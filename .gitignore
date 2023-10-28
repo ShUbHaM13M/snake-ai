@@ -4,3 +4,6 @@
 tmp/
 
 game
+*.exe
+*.obj
+*.pdb

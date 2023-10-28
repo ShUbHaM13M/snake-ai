@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.jsx": "javascriptreact",
+    "*.css": "css",
+    "*.twig": "html",
+    "snake.h": "c",
+    "sdl_error.h": "c",
+    "sdl.h": "c"
+  }
+}

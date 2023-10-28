@@ -1,0 +1,37 @@
+{
+  "configurations": [
+    {
+      "name": "C/C++: cl.exe build and debug active file",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "args": [
+        "/Zi",
+        "/EHsc",
+        "/MD",
+        "/nologo",
+        "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
+        "${file}",
+
+        "/IC:C://vclib/SDL2/include",
+        "/IC:C://vclib/SDL2_ttf/include",
+
+        "/link",
+        "Shell32.lib",
+        "LIBPATH:C://vclib/SDL2/lib/x64",
+        "SDL2.lib",
+        "SDL2main.lib",
+        "LIBPATH:C://vclib/SDL2_ttf/lib/x64",
+        "SDL2_ttf.lib",
+
+        "/SUBSYSTEM:CONSOLE"
+      ],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "console": "integratedTerminal",
+      "preLaunchTask": "C/C++: cl.exe build active file"
+    }
+  ],
+  "version": "2.0.0"
+}
