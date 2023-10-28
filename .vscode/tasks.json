@@ -5,23 +5,27 @@
       "label": "C/C++: cl.exe build active file",
       "command": "cl.exe",
       "args": [
+        "/Zi",
         "/EHsc",
         "/MD",
+        "/nologo",
+
         "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
         "${file}",
 
-        "/I:C:\\vclib\\SDL2\\include",
-        "/I:C:\\vclib\\SDL2_ttf\\include",
+        "/IC://vclib/SDL2/include",
+        "/IC://vclib/SDL2_ttf/include",
 
         "/link",
-        "Shell32.lib",
-        "LIBPATH:C:\\vclib\\SDL2\\lib\\x64",
+        "/LIBPATH:\"C://vclib/SDL2/lib/x64\"",
+        "/LIBPATH:\"C://vclib/SDL2_ttf/lib/x64\"",
+
         "SDL2.lib",
         "SDL2main.lib",
-        "LIBPATH:C:\\vclib\\SDL2_ttf\\lib\\x64",
         "SDL2_ttf.lib",
+        "Shell32.lib",
 
-        "/SUBSYSTEM:CONSOLE"
+        "/SUBSYSTEM:WINDOWS"
       ],
       "options": {
         "cwd": "${fileDirname}"

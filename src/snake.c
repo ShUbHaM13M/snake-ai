@@ -181,6 +181,11 @@ void render_score() {
 
     game.font = TTF_OpenFont("./resources/fonts/square-deal.ttf", 22);
     if (!game.font) {
+      #ifdef _WIN32
+        game.font = TTF_OpenFont("C:/Windows/Fonts/Arial.ttf", 22);
+      #else
+        // Load default font for posix
+      #endif // _WIN32
       fprintf(stderr, "Error: Loading font failed: %s\n", SDL_GetError());
     }
   }
@@ -198,7 +203,7 @@ void render_score() {
                          .w = score_text_surface->w,
                          .h = score_text_surface->h};
   SDL_RenderCopy(game.renderer, score_texture, NULL, &score_rect);
-
+  // TODO: Close the ttf font
   SDL_DestroyTexture(score_texture);
   SDL_FreeSurface(score_text_surface);
 }
